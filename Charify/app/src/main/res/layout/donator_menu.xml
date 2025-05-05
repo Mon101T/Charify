@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#FFFFFF">
+
+    <!-- Header Section with Notification Icon -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/headerSection"/>
+
+    <!-- App Title -->
+    <ImageView
+        android:id="@+id/charify_word"
+        android:layout_width="232dp"
+        android:layout_height="104dp"
+        android:layout_marginTop="-22dp"
+        android:contentDescription="Charify Word Logo"
+        android:elevation="0dp"
+        android:src="@drawable/charify_two"/>
+
+    <!-- User Greeting -->
+    <TextView
+        android:id="@+id/userGreeting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HELLO, PIO"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:layout_below="@id/charify_word"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/nats"/>
+
+    <!-- Search Bar -->
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:queryHint="Search"
+        android:iconifiedByDefault="false"
+        android:layout_below="@id/userGreeting"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/searchview_background"/>
+
+    <!-- Categories Title -->
+    <TextView
+        android:id="@+id/categoriesTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CATEGORIES"
+        android:textSize="16sp"
+        android:textColor="#666666"
+        android:layout_below="@id/searchView"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Categories Buttons -->
+    <LinearLayout
+        android:id="@+id/categoriesContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/categoriesTitle">
+
+        <Button
+            android:id="@+id/healthButton"
+            style="@style/CategoryButton"
+            android:text="HEALTH"/>
+
+        <Button
+            android:id="@+id/educationButton"
+            style="@style/CategoryButton"
+            android:text="EDUCATION"/>
+
+        <Button
+            android:id="@+id/natureButton"
+            style="@style/CategoryButton"
+            android:text="NATURE"/>
+
+        <Button
+            android:id="@+id/animalButton"
+            style="@style/CategoryButton"
+            android:text="ANIMAL"/>
+
+        <Button
+            android:id="@+id/memorialButton"
+            style="@style/CategoryButton"
+            android:text="MEMORIAL"/>
+
+        <Button
+            android:id="@+id/nonprofitButton"
+            style="@style/CategoryButton"
+            android:text="NONPROFIT"
+            android:layout_marginBottom="24dp"/>
+
+    </LinearLayout>
+
+    <!-- More Button -->
+    <Button
+        android:id="@+id/moreButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MORE"
+        android:textSize="16sp"
+        android:textColor="#000000"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:layout_below="@id/categoriesContainer"/>
+
+    <!-- Bottom Square Items -->
+    <LinearLayout
+        android:id="@+id/bottomItemsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="16dp"
+        android:weightSum="5"
+        android:gravity="center">
+
+        <ImageButton
+            android:id="@+id/squareItem1"
+            style="@style/BottomSquareItem"/>
+
+        <ImageButton
+            android:id="@+id/squareItem2"
+            style="@style/BottomSquareItem"/>
+
+        <ImageButton
+            android:id="@+id/squareItem3"
+            style="@style/BottomSquareItem"/>
+
+        <ImageButton
+            android:id="@+id/squareItem4"
+            style="@style/BottomSquareItem"/>
+
+        <ImageButton
+            android:id="@+id/squareItem5"
+            style="@style/BottomSquareItem"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
