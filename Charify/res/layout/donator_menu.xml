@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    android:background="#FFFFFF">
+    android:background="@drawable/white_background">
 
     <!-- Header Section with Notification Icon -->
     <RelativeLayout
@@ -29,6 +29,7 @@
         android:text="HELLO, PIO"
         android:textSize="20sp"
         android:textColor="#000000"
+        android:textStyle="bold"
         android:layout_below="@id/charify_word"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/nats"/>
@@ -43,7 +44,7 @@
         android:layout_below="@id/userGreeting"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="24dp"
-        android:background="@drawable/searchview_background"/>
+        android:background="@drawable/search_bar_style"/>
 
     <!-- Categories Title -->
     <TextView
@@ -51,64 +52,280 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="CATEGORIES"
-        android:textSize="16sp"
-        android:textColor="#666666"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
         android:layout_below="@id/searchView"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/nats"/>
 
-    <!-- Categories Buttons -->
-    <LinearLayout
-        android:id="@+id/categoriesContainer"
+    <GridLayout
+        android:id="@+id/categoriesGrid"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_below="@id/categoriesTitle">
+        android:layout_below="@id/categoriesTitle"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:columnCount="3"
+        android:rowCount="3">
 
-        <Button
-            android:id="@+id/healthButton"
-            style="@style/CategoryButton"
-            android:text="HEALTH"/>
+        <!-- Health Category -->
+        <FrameLayout
+            android:id="@+id/healthCategory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="4dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground">
 
-        <Button
-            android:id="@+id/educationButton"
-            style="@style/CategoryButton"
-            android:text="EDUCATION"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="#5CCE61">
 
-        <Button
-            android:id="@+id/natureButton"
-            style="@style/CategoryButton"
-            android:text="NATURE"/>
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_health"
+                    android:layout_marginTop="12dp"/>
 
-        <Button
-            android:id="@+id/animalButton"
-            style="@style/CategoryButton"
-            android:text="ANIMAL"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="HEALTH"
+                    android:textSize="12sp"
+                    android:textColor="#000000"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="12dp"/>
+            </LinearLayout>
+        </FrameLayout>
 
-        <Button
-            android:id="@+id/memorialButton"
-            style="@style/CategoryButton"
-            android:text="MEMORIAL"/>
+        <!-- Education Category -->
+        <FrameLayout
+            android:id="@+id/educationCategory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="4dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground">
 
-        <Button
-            android:id="@+id/nonprofitButton"
-            style="@style/CategoryButton"
-            android:text="NONPROFIT"
-            android:layout_marginBottom="24dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="#5CCE61">
 
-    </LinearLayout>
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_education"
+                    android:layout_marginTop="12dp"/>
 
-    <!-- More Button -->
-    <Button
-        android:id="@+id/moreButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="MORE"
-        android:textSize="16sp"
-        android:textColor="#000000"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        android:layout_below="@id/categoriesContainer"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="EDUCATION"
+                    android:textSize="12sp"
+                    android:textColor="#000000"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="12dp"/>
+            </LinearLayout>
+        </FrameLayout>
 
-    <!-- Bottom Square Items -->
+        <!-- Nature Category -->
+        <FrameLayout
+            android:id="@+id/natureCategory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="4dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="#5CCE61">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_nature"
+                    android:layout_marginTop="12dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="NATURE"
+                    android:textSize="12sp"
+                    android:textColor="#000000"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="12dp"/>
+            </LinearLayout>
+        </FrameLayout>
+
+        <!-- Animal Category -->
+        <FrameLayout
+            android:id="@+id/animalCategory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="4dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="#5CCE61">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_animal"
+                    android:layout_marginTop="12dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ANIMAL"
+                    android:textSize="12sp"
+                    android:textColor="#000000"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="12dp"/>
+            </LinearLayout>
+        </FrameLayout>
+
+        <!-- Memorial Category -->
+        <FrameLayout
+            android:id="@+id/memorialCategory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="4dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="#5CCE61">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_memorial"
+                    android:layout_marginTop="12dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MEMORIAL"
+                    android:textSize="12sp"
+                    android:textColor="#000000"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="12dp"/>
+            </LinearLayout>
+        </FrameLayout>
+
+        <!-- Nonprofit Category -->
+        <FrameLayout
+            android:id="@+id/nonprofitCategory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="4dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="#5CCE61">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_nonprofit"
+                    android:layout_marginTop="12dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="NONPROFIT"
+                    android:textSize="12sp"
+                    android:textColor="#000000"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="12dp"/>
+            </LinearLayout>
+        </FrameLayout>
+
+        <!-- More Button -->
+        <FrameLayout
+            android:id="@+id/moreCategory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="4dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="#5CCE61">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="..."
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MORE"
+                    android:textSize="12sp"
+                    android:textColor="#000000"
+                    android:layout_marginBottom="12dp"/>
+            </LinearLayout>
+        </FrameLayout>
+    </GridLayout>
+
     <LinearLayout
         android:id="@+id/bottomItemsContainer"
         android:layout_width="match_parent"
